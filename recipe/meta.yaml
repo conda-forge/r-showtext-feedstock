@@ -16,6 +16,10 @@ build:
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -43,6 +47,7 @@ requirements:
     - r-showtextdb >=2.0
     - r-sysfonts >=0.7.1
     - freetype                     # [not win]
+    - zlib
   run:
     - r-base
     - r-showtextdb >=2.0
