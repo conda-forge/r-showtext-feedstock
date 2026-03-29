@@ -1,18 +1,18 @@
-{% set version = "0.9-7" %}
+{% set version = "0.9-8" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-showtext
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
     - {{ cran_mirror }}/src/contrib/showtext_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/showtext/showtext_{{ version }}.tar.gz
-  sha256: 251283e6fa2ff82c31145d43aabd54e83bb7e673bfc764376a2e0dc50e924889
+  sha256: 42dc18aa4daf639795ea0fa06946a2770b52bc5ce2b4d6819899aa7c46e5e350
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -46,7 +46,7 @@ requirements:
     - r-base
     - r-showtextdb >=2.0
     - r-sysfonts >=0.7.1
-    - freetype                     # [not win]
+    - freetype
     - zlib
   run:
     - r-base
@@ -62,8 +62,8 @@ about:
   home: https://github.com/yixuan/showtext
   license: Apache-2.0
   license_file: LICENSE
-  summary: Making it easy to use various types of fonts ('TrueType', 'OpenType', Type 1, web fonts, etc.) in R graphs, and supporting most output formats of R graphics including PNG, PDF and SVG. Text glyphs will be converted into polygons or raster images, hence after the plot has been created, it no longer relies on the
-    font files. No external software such as 'Ghostscript' is needed to use this package.
+  summary: Making it easy to use various types of fonts ('TrueType', 'OpenType', Type 1, web fonts, etc.) in R graphs, and supporting most output formats of R graphics including PNG, PDF and SVG. Text glyphs will be converted into polygons or raster images, hence after the plot has been created, it no longer relies on 
+    the font files. No external software such as 'Ghostscript' is needed to use this package.
   license_family: APACHE
 
 extra:
