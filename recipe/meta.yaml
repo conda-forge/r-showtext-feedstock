@@ -3,7 +3,7 @@
 
 package:
   name: r-showtext
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
   url:
@@ -46,7 +46,7 @@ requirements:
     - r-base
     - r-showtextdb >=2.0
     - r-sysfonts >=0.7.1
-    - freetype                     # [not win]
+    - freetype
     - zlib
   run:
     - r-base
